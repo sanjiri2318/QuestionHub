@@ -1,0 +1,180 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  STUDENT
+  ADMIN
+}
+
+enum UserStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum ExamMonth {
+  JANUARY
+  MAY
+  AUGUST
+  NOVEMBER
+}
+
+model User {
+  id             String         @id @default(uuid())
+  name           String
+  registerNumber String         @unique
+  email          String         @unique
+  password       String
+  departmentId   String
+  role           UserRole       @default(STUDENT)
+  status         UserStatus     @default(PENDING)
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  department     Department     @relation(fields: [departmentId], references: [id])
+  papers         QuestionPaper[] @relation("UploadedBy")
+  bookmarks      Bookmark[]
+  downloads      Download[]
+  auditLogs      AuditLog[]
+  notifications  Notification[]
+
+  @@index([email])
+  @@index([departmentId])
+  @@index([role])
+  @@index([status])
+}
+
+model Department {
+  id        String      @id @default(uuid())
+  name      String      @unique
+
+  users     User[]
+  subjects  Subject[]
+  papers    QuestionPaper[]
+
+  @@index([name])
+}
+
+model Subject {
+  id           String         @id @default(uuid())
+  code         String
+  name         String
+  semester     Int
+  departmentId String
+
+  department   Department     @relation(fields: [departmentId], references: [id])
+  papers       QuestionPaper[]
+
+  @@unique([code, departmentId])
+  @@index([departmentId])
+  @@index([semester])
+}
+
+model QuestionPaper {
+  id          String     @id @default(uuid())
+  title       String
+  subjectId   String
+  departmentId String
+  semester    Int
+  examYear    Int
+  examMonth   ExamMonth
+  fileName    String
+  filePath    String
+  uploadedBy  String
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  subject     Subject    @relation(fields: [subjectId], references: [id])
+  department  Department @relation(fields: [departmentId], references: [id])
+  uploader    User       @relation("UploadedBy", fields: [uploadedBy], references: [id])
+  bookmarks   Bookmark[]
+  downloads   Download[]
+
+  @@index([subjectId])
+  @@index([departmentId])
+  @@index([semester])
+  @@index([examYear])
+  @@index([examMonth])
+  @@index([uploadedBy])
+  @@index([createdAt])
+}
+
+model Bookmark {
+  id      String @id @default(uuid())
+  userId  String
+  paperId String
+
+  user     User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  paper    QuestionPaper @relation(fields: [paperId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, paperId])
+  @@index([userId])
+  @@index([paperId])
+}
+
+model Download {
+  id           String   @id @default(uuid())
+  userId       String
+  paperId      String
+  downloadedAt DateTime @default(now())
+
+  user     User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  paper    QuestionPaper @relation(fields: [paperId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([paperId])
+  @@index([downloadedAt])
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  userId    String?
+  action    String
+  entity    String
+  entityId  String?
+  details   Json?
+  ip        String?
+  createdAt DateTime @default(now())
+
+  user     User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([action])
+  @@index([entity])
+  @@index([createdAt])
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String
+  title     String
+  message   String
+  type      String
+  read      Boolean  @default(false)
+  link      String?
+  createdAt DateTime @default(now())
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([userId, read])
+  @@index([createdAt])
+  @@index([userId, createdAt])
+}
+
+model TokenBlacklist {
+  id        String   @id @default(uuid())
+  token     String   @unique
+  type      String   @default("access")
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([token])
+  @@index([expiresAt])
+}
