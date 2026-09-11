@@ -146,7 +146,7 @@ const LoginPage = () => {
                 >
                   <School sx={{ fontSize: 36, color: 'white' }} />
                 </Box>
-                <Typography variant="h4" fontWeight="bold" color="primary">
+                <Typography variant="h4" sx={{ fontWeight: 'bold' }} color="primary">
                   QuestionHub
                 </Typography>
                 <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
@@ -155,7 +155,7 @@ const LoginPage = () => {
               </Box>
 
               {/* Sign In Title */}
-              <Typography variant="h5" fontWeight="bold" sx={{ mb: 0.5 }}>
+              <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 0.5 }}>
                 Student Login
               </Typography>
               <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
@@ -261,8 +261,7 @@ const LoginPage = () => {
                   <Link
                     component={RouterLink}
                     to="/register"
-                    fontWeight="bold"
-                    sx={{ textDecoration: 'none' }}
+                    sx={{ fontWeight: 'bold', textDecoration: 'none' }}
                   >
                     Register here
                   </Link>

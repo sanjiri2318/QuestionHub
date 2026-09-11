@@ -4,14 +4,11 @@ import {
   Card,
   CardContent,
   Typography,
-  Avatar,
   Skeleton,
   Button,
   Stack,
   Chip,
-  Tooltip,
   useTheme,
-  LinearProgress,
 } from '@mui/material';
 import {
   Description,
@@ -90,7 +87,7 @@ const StudentDashboard = () => {
         <CardContent sx={{ p: 4 }}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 2 }}>
             <Box>
-              <Typography variant="h4" fontWeight="bold" sx={{ mb: 0.5 }}>
+              <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 0.5 }}>
                 Welcome back, {user?.name?.split(' ')[0]}!
               </Typography>
               <Typography variant="body1" sx={{ opacity: 0.9 }}>
@@ -128,7 +125,7 @@ const StudentDashboard = () => {
         <Card sx={{ mb: 3 }}>
           <CardContent>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-              <Typography variant="h6" fontWeight="bold">
+              <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
                 Download Activity (Last 7 Days)
               </Typography>
               <AccessTime color="action" />
@@ -152,7 +149,7 @@ const StudentDashboard = () => {
           <Card sx={{ height: '100%' }}>
             <CardContent>
               <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-                <Typography variant="h6" fontWeight="bold">
+                <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
                   Recent Papers
                 </Typography>
                 <Button
@@ -187,7 +184,7 @@ const StudentDashboard = () => {
                   >
                     <Description color="primary" />
                     <Box sx={{ flex: 1, minWidth: 0 }}>
-                      <Typography variant="body2" fontWeight="medium" noWrap>
+                      <Typography variant="body2" noWrap sx={{ fontWeight: 'medium' }}>
                         {paper.title}
                       </Typography>
                       <Stack direction="row" spacing={0.5} sx={{ mt: 0.5 }}>
@@ -229,7 +226,7 @@ const StudentDashboard = () => {
           <Card sx={{ height: '100%' }}>
             <CardContent>
               <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-                <Typography variant="h6" fontWeight="bold">
+                <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
                   Bookmarked Papers
                 </Typography>
                 <Button
@@ -264,7 +261,7 @@ const StudentDashboard = () => {
                   >
                     <Bookmark color="secondary" />
                     <Box sx={{ flex: 1, minWidth: 0 }}>
-                      <Typography variant="body2" fontWeight="medium" noWrap>
+                      <Typography variant="body2" noWrap sx={{ fontWeight: 'medium' }}>
                         {bookmark.paper?.title}
                       </Typography>
                       <Stack direction="row" spacing={0.5} sx={{ mt: 0.5 }}>
@@ -305,7 +302,7 @@ const StudentDashboard = () => {
         <Grid size={{ xs: 12 }}>
           <Card>
             <CardContent>
-              <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
+              <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
                 Quick Actions
               </Typography>
               <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>

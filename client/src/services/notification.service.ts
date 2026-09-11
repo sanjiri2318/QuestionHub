@@ -1,5 +1,4 @@
 import api from './api';
-import type { User } from '@utils/types';
 
 export interface NotificationItem {
   id: string;

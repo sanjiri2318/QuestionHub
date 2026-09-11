@@ -17,8 +17,6 @@ import {
   DialogActions,
   Alert,
   Chip,
-  useMediaQuery,
-  useTheme,
 } from '@mui/material';
 import { Person, Save, Lock, CheckCircle, Shield, Edit as EditIcon } from '@mui/icons-material';
 import { useAuth } from '@contexts/AuthContext';
@@ -26,9 +24,7 @@ import { useChangePassword, useUpdateProfile } from '@hooks/useAuth';
 import { changePasswordSchema, type ChangePasswordFormData } from '@utils/validators';
 
 const AdminProfile = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const { user, refreshUser } = useAuth();
+  const { user } = useAuth();
   const changePasswordMutation = useChangePassword();
   const updateProfileMutation = useUpdateProfile();
   const [passwordDialogOpen, setPasswordDialogOpen] = useState(false);
@@ -49,6 +45,7 @@ const AdminProfile = () => {
       await changePasswordMutation.mutateAsync({
         currentPassword: data.currentPassword,
         newPassword: data.newPassword,
+        confirmNewPassword: data.confirmNewPassword,
       });
       setPasswordDialogOpen(false);
       reset();
@@ -78,7 +75,7 @@ const AdminProfile = () => {
 
   return (
     <Box>
-      <Typography variant="h4" fontWeight="bold" sx={{ mb: 3 }}>
+      <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 3 }}>
         Admin Profile
       </Typography>
 
@@ -91,7 +88,7 @@ const AdminProfile = () => {
                   {user?.name?.charAt(0).toUpperCase()}
                 </Avatar>
                 <Box>
-                  <Typography variant="h5" fontWeight="bold">
+                  <Typography variant="h5" sx={{ fontWeight: 'bold' }}>
                     {user?.name}
                   </Typography>
                   <Chip
@@ -198,7 +195,7 @@ const AdminProfile = () => {
         <Grid size={{ xs: 12, md: 6 }}>
           <Card>
             <CardContent sx={{ p: 4 }}>
-              <Typography variant="h6" fontWeight="bold" sx={{ mb: 3 }}>
+              <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 3 }}>
                 Security Settings
               </Typography>
               <Card variant="outlined" sx={{ p: 3 }}>
@@ -207,7 +204,7 @@ const AdminProfile = () => {
                     <Lock />
                   </Avatar>
                   <Box sx={{ flex: 1 }}>
-                    <Typography variant="subtitle1" fontWeight="medium">
+                    <Typography variant="subtitle1" sx={{ fontWeight: 'medium' }}>
                       Change Password
                     </Typography>
                     <Typography variant="body2" color="text.secondary">

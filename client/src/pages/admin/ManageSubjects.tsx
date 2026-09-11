@@ -20,11 +20,8 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
-  Divider,
   Tooltip,
   Alert,
-  useMediaQuery,
-  useTheme,
 } from '@mui/material';
 import {
   Add,
@@ -40,8 +37,6 @@ import { useNotification } from '@contexts/NotificationContext';
 import { subjectSchema, type SubjectFormData } from '@utils/validators';
 
 const ManageSubjects = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const { data: departments } = useAdminDepartments();
   const { data: subjects, isLoading } = useAdminSubjects();
   const createMutation = useCreateSubject();
@@ -143,7 +138,7 @@ const ManageSubjects = () => {
   return (
     <Box>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3, flexWrap: 'wrap', gap: 2 }}>
-        <Typography variant="h4" fontWeight="bold">
+        <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
           Manage Subjects
         </Typography>
         <Button variant="contained" startIcon={<Add />} onClick={() => handleOpen()}>
@@ -192,7 +187,7 @@ const ManageSubjects = () => {
             <AccordionSummary expandIcon={<ExpandMore />}>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                 <School color="primary" />
-                <Typography fontWeight="bold">Semester {semester}</Typography>
+                <Typography sx={{ fontWeight: 'bold' }}>Semester {semester}</Typography>
                 <Chip label={semSubjects.length} size="small" />
               </Box>
             </AccordionSummary>
@@ -222,7 +217,7 @@ const ManageSubjects = () => {
                             </Tooltip>
                           </Box>
                         </Box>
-                        <Typography variant="body2" fontWeight="medium" sx={{ mb: 0.5 }}>
+                        <Typography variant="body2" sx={{ fontWeight: 'medium', mb: 0.5 }}>
                           {subject.name}
                         </Typography>
                         {!selectedDepartment && (

@@ -8,7 +8,6 @@ import {
   TextField,
   MenuItem,
   InputAdornment,
-  IconButton,
   Skeleton,
   Pagination,
   Collapse,
@@ -22,8 +21,6 @@ import {
   FilterList,
   FilterListOff,
   Description,
-  ExpandMore,
-  ExpandLess,
   Sort,
 } from '@mui/icons-material';
 import { usePapers, useBookmarkPaper, useRemoveBookmark, useDownloadPaper } from '@hooks/usePapers';
@@ -91,7 +88,7 @@ const BrowsePapers = () => {
     <Box>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
         <Box>
-          <Typography variant="h4" fontWeight="bold">
+          <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
             Browse Papers
           </Typography>
           <Typography variant="body2" color="text.secondary">

@@ -15,7 +15,7 @@ const StatCard = ({ label, value, icon, color, loading = false }: StatCardProps)
         {icon}
       </Avatar>
       <Box>
-        <Typography variant="h4" fontWeight="bold">
+        <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
           {loading ? <Skeleton width={50} /> : value}
         </Typography>
         <Typography variant="body2" color="text.secondary">

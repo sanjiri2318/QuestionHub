@@ -58,7 +58,7 @@ const DownloadsPage = () => {
     <Box>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
         <Box>
-          <Typography variant="h4" fontWeight="bold">
+          <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
             Download History
           </Typography>
           <Typography variant="body2" color="text.secondary">
@@ -130,7 +130,7 @@ const DownloadsPage = () => {
                       <DownloadIcon sx={{ color: 'primary.main', fontSize: 20 }} />
                     </Box>
                     <Box sx={{ flex: 1, minWidth: 0 }}>
-                      <Typography variant="body1" fontWeight="medium" noWrap>
+                      <Typography variant="body1" noWrap sx={{ fontWeight: 'medium' }}>
                         {download.paper?.title}
                       </Typography>
                       <Stack direction="row" spacing={1} sx={{ mt: 0.5, alignItems: 'center' }}>

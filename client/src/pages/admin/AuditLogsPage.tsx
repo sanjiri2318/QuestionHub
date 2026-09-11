@@ -18,8 +18,6 @@ import {
   Skeleton,
   TablePagination,
   Button,
-  InputAdornment,
-  Divider,
 } from '@mui/material';
 import {
   FilterList,
@@ -30,9 +28,7 @@ import {
   PersonAdd,
   PersonRemove,
   Edit,
-  Login,
   Upload,
-  Search,
 } from '@mui/icons-material';
 import { useAuditLogs, useAuditLogStats } from '@hooks/useAudit';
 import type { AuditLogFilters } from '@services/audit.service';
@@ -93,7 +89,7 @@ const AuditLogsPage = () => {
 
   return (
     <Box>
-      <Typography variant="h4" fontWeight="bold" sx={{ mb: 3 }}>
+      <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 3 }}>
         Audit Logs
       </Typography>
 
@@ -102,7 +98,7 @@ const AuditLogsPage = () => {
           <Grid size={{ xs: 12, sm: 6, md: 3 }}>
             <Card>
               <CardContent sx={{ textAlign: 'center' }}>
-                <Typography variant="h4" fontWeight="bold" color="primary">
+                <Typography variant="h4" sx={{ fontWeight: 'bold' }} color="primary">
                   {stats.totalLogs}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">Total Events</Typography>
@@ -113,7 +109,7 @@ const AuditLogsPage = () => {
             <Grid size={{ xs: 12, sm: 6, md: 3 }} key={item.action}>
               <Card>
                 <CardContent sx={{ textAlign: 'center' }}>
-                  <Typography variant="h4" fontWeight="bold">
+                  <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
                     {item.count}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
@@ -227,7 +223,7 @@ const AuditLogsPage = () => {
                       <TableCell>
                         <Typography variant="body2">{log.entity}</Typography>
                         {log.entityId && (
-                          <Typography variant="caption" color="text.secondary" display="block">
+                          <Typography variant="caption" color="text.secondary" sx={{ display: 'block' }}>
                             {log.entityId.slice(0, 8)}...
                           </Typography>
                         )}

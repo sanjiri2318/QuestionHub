@@ -81,7 +81,7 @@ const ForgotPasswordPage = () => {
               <CheckCircle sx={{ fontSize: 40, color: 'success.main' }} />
             </Box>
 
-            <Typography variant="h5" fontWeight="bold" sx={{ mb: 2 }}>
+            <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 2 }}>
               Check Your Email
             </Typography>
 
@@ -97,7 +97,7 @@ const ForgotPasswordPage = () => {
                 bgcolor: 'background.default',
               }}
             >
-              <Typography variant="body1" fontWeight="medium">
+              <Typography variant="body1" sx={{ fontWeight: 'medium' }}>
                 {sentEmail}
               </Typography>
             </Paper>
@@ -126,8 +126,7 @@ const ForgotPasswordPage = () => {
                   setEmailSent(false);
                   setSentEmail('');
                 }}
-                fontWeight="bold"
-                sx={{ textDecoration: 'none' }}
+                sx={{ fontWeight: 'bold', textDecoration: 'none' }}
               >
                 Try again
               </Link>
@@ -174,13 +173,13 @@ const ForgotPasswordPage = () => {
             >
               <School sx={{ fontSize: 36, color: 'white' }} />
             </Box>
-            <Typography variant="h4" fontWeight="bold" color="primary">
+            <Typography variant="h4" sx={{ fontWeight: 'bold' }} color="primary">
               QuestionHub
             </Typography>
           </Box>
 
           {/* Title */}
-          <Typography variant="h5" fontWeight="bold" sx={{ mb: 1 }}>
+          <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 1 }}>
             Forgot Password?
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>

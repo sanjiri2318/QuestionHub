@@ -80,7 +80,7 @@ const ManageStudents = () => {
 
   return (
     <Box>
-      <Typography variant="h4" fontWeight="bold" sx={{ mb: 3 }}>
+      <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 3 }}>
         Manage Students
       </Typography>
 
@@ -146,7 +146,7 @@ const ManageStudents = () => {
                             {student.name.charAt(0).toUpperCase()}
                           </Avatar>
                           <Box>
-                            <Typography variant="body2" fontWeight="medium">
+                            <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
                               {student.name}
                             </Typography>
                             {isMobile && (
@@ -224,7 +224,7 @@ const ManageStudents = () => {
                             {student.name.charAt(0).toUpperCase()}
                           </Avatar>
                           <Box>
-                            <Typography variant="body2" fontWeight="medium">
+                            <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
                               {student.name}
                             </Typography>
                             {isMobile && (

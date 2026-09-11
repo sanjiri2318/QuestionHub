@@ -19,8 +19,6 @@ import {
   Avatar,
   Chip,
   Tooltip,
-  useMediaQuery,
-  useTheme,
   Divider,
 } from '@mui/material';
 import {
@@ -37,8 +35,6 @@ import { useNotification } from '@contexts/NotificationContext';
 import { departmentSchema, type DepartmentFormData } from '@utils/validators';
 
 const ManageDepartments = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const { data: departments, isLoading } = useAdminDepartments();
   const createMutation = useCreateDepartment();
   const updateMutation = useUpdateDepartment();
@@ -114,7 +110,7 @@ const ManageDepartments = () => {
   return (
     <Box>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
-        <Typography variant="h4" fontWeight="bold">
+        <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
           Manage Departments
         </Typography>
         <Button variant="contained" startIcon={<Add />} onClick={() => handleOpen()}>
@@ -164,7 +160,7 @@ const ManageDepartments = () => {
                       </Tooltip>
                     </Box>
                   </Box>
-                  <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
+                  <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
                     {dept.name}
                   </Typography>
                   <Divider sx={{ mb: 2 }} />

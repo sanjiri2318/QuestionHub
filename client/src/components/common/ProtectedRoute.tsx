@@ -48,7 +48,7 @@ const PendingApprovalScreen = () => (
       }}
     >
       <Warning sx={{ fontSize: 64, color: 'warning.main', mb: 2 }} />
-      <Typography variant="h5" fontWeight="bold" sx={{ mb: 2 }}>
+      <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 2 }}>
         Account Pending Approval
       </Typography>
       <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
@@ -90,7 +90,7 @@ const RejectedScreen = () => (
       }}
     >
       <Warning sx={{ fontSize: 64, color: 'error.main', mb: 2 }} />
-      <Typography variant="h5" fontWeight="bold" color="error" sx={{ mb: 2 }}>
+      <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 2 }} color="error">
         Account Rejected
       </Typography>
       <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
@@ -143,7 +143,7 @@ const UnauthorizedScreen = () => (
       }}
     >
       <Warning sx={{ fontSize: 64, color: 'error.main', mb: 2 }} />
-      <Typography variant="h5" fontWeight="bold" sx={{ mb: 2 }}>
+      <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 2 }}>
         Access Denied
       </Typography>
       <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>

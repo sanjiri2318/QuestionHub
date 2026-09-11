@@ -18,7 +18,7 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material';
-import { CloudUpload, Description, CheckCircle, Close } from '@mui/icons-material';
+import { CloudUpload, CheckCircle, Close } from '@mui/icons-material';
 import { useUploadPaper } from '@hooks/usePapers';
 import { useDepartments, useSubjectsByDepartment } from '@hooks/useDepartments';
 import type { ExamMonth } from '@utils/types';
@@ -122,7 +122,7 @@ const UploadPapers = () => {
 
   return (
     <Box>
-      <Typography variant="h4" fontWeight="bold" sx={{ mb: 3 }}>
+      <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 3 }}>
         Upload Question Paper
       </Typography>
 
@@ -299,7 +299,7 @@ const UploadPapers = () => {
                 {selectedFile ? (
                   <Box>
                     <CheckCircle color="success" sx={{ fontSize: 48, mb: 1 }} />
-                    <Typography variant="body1" fontWeight="medium">
+                    <Typography variant="body1" sx={{ fontWeight: 'medium' }}>
                       {selectedFile.name}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">

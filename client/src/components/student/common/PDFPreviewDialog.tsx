@@ -36,8 +36,10 @@ const PDFPreviewDialog = ({ paper, open, onClose, onDownload }: PDFPreviewDialog
       fullScreen={isFullScreen}
       maxWidth="lg"
       fullWidth
-      PaperProps={{
-        sx: { height: isFullScreen ? '100%' : '85vh' },
+      slotProps={{
+        paper: {
+          sx: { height: isFullScreen ? '100%' : '85vh' },
+        },
       }}
     >
       <DialogTitle
@@ -49,7 +51,7 @@ const PDFPreviewDialog = ({ paper, open, onClose, onDownload }: PDFPreviewDialog
         }}
       >
         <Box sx={{ flex: 1, mr: 2 }}>
-          <Typography variant="h6" fontWeight="bold" noWrap>
+          <Typography variant="h6" sx={{ fontWeight: 'bold' }} noWrap>
             {paper.title}
           </Typography>
           <Box sx={{ display: 'flex', gap: 1, mt: 0.5 }}>

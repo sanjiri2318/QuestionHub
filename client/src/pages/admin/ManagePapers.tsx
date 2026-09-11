@@ -151,7 +151,7 @@ const ManagePapers = () => {
   return (
     <Box>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3, flexWrap: 'wrap', gap: 2 }}>
-        <Typography variant="h4" fontWeight="bold">
+        <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
           Manage Papers
         </Typography>
         <Button variant="contained" startIcon={<Add />} href="/admin/papers/upload">
@@ -289,7 +289,7 @@ const ManagePapers = () => {
                       <TableCell>
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                           {isMobile && <Description color="action" sx={{ fontSize: 18 }} />}
-                          <Typography variant="body2" fontWeight="medium" noWrap sx={{ maxWidth: isMobile ? 200 : 300 }}>
+                          <Typography variant="body2" noWrap sx={{ fontWeight: 'medium', maxWidth: isMobile ? 200 : 300 }}>
                             {paper.title}
                           </Typography>
                         </Box>

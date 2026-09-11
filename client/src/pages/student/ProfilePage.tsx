@@ -25,7 +25,6 @@ import {
   Email,
   Badge,
   School,
-  CalendarMonth,
   Lock,
   CheckCircle,
 } from '@mui/icons-material';
@@ -91,7 +90,7 @@ const ProfilePage = () => {
 
   return (
     <Box>
-      <Typography variant="h4" fontWeight="bold" sx={{ mb: 3 }}>
+      <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 3 }}>
         My Profile
       </Typography>
 
@@ -113,7 +112,7 @@ const ProfilePage = () => {
                   {user?.name?.charAt(0).toUpperCase()}
                 </Avatar>
                 <Box>
-                  <Typography variant="h5" fontWeight="bold">
+                  <Typography variant="h5" sx={{ fontWeight: 'bold' }}>
                     {user?.name}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
@@ -217,7 +216,7 @@ const ProfilePage = () => {
           <Stack spacing={3}>
             <Card>
               <CardContent>
-                <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
+                <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
                   Account Details
                 </Typography>
                 <Stack spacing={2}>
@@ -225,7 +224,7 @@ const ProfilePage = () => {
                     <Typography variant="caption" color="text.secondary">
                       Role
                     </Typography>
-                    <Typography variant="body2" fontWeight="medium">
+                    <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
                       {user?.role}
                     </Typography>
                   </Box>
@@ -234,7 +233,7 @@ const ProfilePage = () => {
                       Status
                     </Typography>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                      <Typography variant="body2" fontWeight="medium">
+                      <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
                         {user?.status}
                       </Typography>
                       {user?.status === 'APPROVED' && (
@@ -246,7 +245,7 @@ const ProfilePage = () => {
                     <Typography variant="caption" color="text.secondary">
                       Member Since
                     </Typography>
-                    <Typography variant="body2" fontWeight="medium">
+                    <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
                       {user?.createdAt
                         ? new Date(user.createdAt).toLocaleDateString('en-IN', {
                             day: 'numeric',
@@ -262,7 +261,7 @@ const ProfilePage = () => {
 
             <Card>
               <CardContent>
-                <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
+                <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
                   Security
                 </Typography>
                 <Button
@@ -291,7 +290,7 @@ const ProfilePage = () => {
         fullWidth
       >
         <DialogTitle>
-          <Typography variant="h6" fontWeight="bold">
+          <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
             Change Password
           </Typography>
         </DialogTitle>

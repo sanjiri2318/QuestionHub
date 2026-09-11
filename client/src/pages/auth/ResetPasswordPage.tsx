@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link as RouterLink, useNavigate, useSearchParams } from 'react-router-dom';
+import { Link as RouterLink, useSearchParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
@@ -28,7 +28,6 @@ import { resetPasswordSchema, type ResetPasswordFormData } from '@utils/validato
 import { useResetPassword } from '@hooks/useAuth';
 
 const ResetPasswordPage = () => {
-  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const token = searchParams.get('token');
   const [showPassword, setShowPassword] = useState(false);
@@ -93,7 +92,7 @@ const ResetPasswordPage = () => {
             >
               <Warning sx={{ fontSize: 40, color: 'error.main' }} />
             </Box>
-            <Typography variant="h5" fontWeight="bold" sx={{ mb: 2 }}>
+            <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 2 }}>
               Invalid Reset Link
             </Typography>
             <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
@@ -149,7 +148,7 @@ const ResetPasswordPage = () => {
             >
               <CheckCircle sx={{ fontSize: 40, color: 'success.main' }} />
             </Box>
-            <Typography variant="h5" fontWeight="bold" sx={{ mb: 2 }}>
+            <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 2 }}>
               Password Reset Successful!
             </Typography>
             <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
@@ -219,13 +218,13 @@ const ResetPasswordPage = () => {
             >
               <School sx={{ fontSize: 36, color: 'white' }} />
             </Box>
-            <Typography variant="h4" fontWeight="bold" color="primary">
+            <Typography variant="h4" sx={{ fontWeight: 'bold' }} color="primary">
               QuestionHub
             </Typography>
           </Box>
 
           {/* Title */}
-          <Typography variant="h5" fontWeight="bold" sx={{ mb: 1 }}>
+          <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 1 }}>
             Reset Password
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>

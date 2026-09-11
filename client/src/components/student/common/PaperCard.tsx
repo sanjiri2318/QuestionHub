@@ -55,9 +55,9 @@ const PaperCard = ({
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 1 }}>
           <Typography
             variant="h6"
-            fontWeight="bold"
             sx={{
               mb: 1,
+              fontWeight: 'bold',
               lineHeight: 1.3,
               overflow: 'hidden',
               textOverflow: 'ellipsis',

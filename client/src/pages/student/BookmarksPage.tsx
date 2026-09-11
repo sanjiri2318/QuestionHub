@@ -44,7 +44,7 @@ const BookmarksPage = () => {
     <Box>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
         <Box>
-          <Typography variant="h4" fontWeight="bold">
+          <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
             My Bookmarks
           </Typography>
           <Typography variant="body2" color="text.secondary">
@@ -102,8 +102,8 @@ const BookmarksPage = () => {
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 1 }}>
                     <Typography
                       variant="h6"
-                      fontWeight="bold"
                       sx={{
+                        fontWeight: 'bold',
                         flex: 1,
                         mr: 1,
                         lineHeight: 1.3,

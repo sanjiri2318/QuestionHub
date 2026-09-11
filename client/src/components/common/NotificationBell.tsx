@@ -4,7 +4,6 @@ import {
   IconButton,
   Badge,
   Menu,
-  MenuItem,
   Typography,
   Box,
   Divider,
@@ -105,18 +104,20 @@ const NotificationBell = () => {
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
-        PaperProps={{
-          sx: {
-            width: isMobile ? '100vw' : 380,
-            maxHeight: 480,
-            mt: 1,
+        slotProps={{
+          paper: {
+            sx: {
+              width: isMobile ? '100vw' : 380,
+              maxHeight: 480,
+              mt: 1,
+            },
           },
         }}
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <Box sx={{ px: 2, py: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Typography variant="h6" fontWeight="bold">
+          <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
             Notifications
           </Typography>
           {unreadCount > 0 && (
@@ -155,13 +156,13 @@ const NotificationBell = () => {
                   </ListItemIcon>
                   <ListItemText
                     primary={
-                      <Typography variant="body2" fontWeight={notification.read ? 'normal' : 'bold'}>
+                      <Typography variant="body2" sx={{ fontWeight: notification.read ? 'normal' : 'bold' }}>
                         {notification.title}
                       </Typography>
                     }
                     secondary={
                       <>
-                        <Typography variant="caption" color="text.secondary" display="block" noWrap>
+                        <Typography variant="caption" color="text.secondary" sx={{ display: 'block' }} noWrap>
                           {notification.message}
                         </Typography>
                         <Typography variant="caption" color="text.secondary">

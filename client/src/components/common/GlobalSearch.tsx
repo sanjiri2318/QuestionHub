@@ -35,7 +35,7 @@ const GlobalSearch = ({ open, onClose }: GlobalSearchProps) => {
     departments: (Department & { _count?: { subjects: number; papers: number } })[];
   }>({ papers: [], subjects: [], departments: [] });
   const inputRef = useRef<HTMLInputElement>(null);
-  const debounceRef = useRef<ReturnType<typeof setTimeout>>();
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   useEffect(() => {
     if (open) {
@@ -80,12 +80,14 @@ const GlobalSearch = ({ open, onClose }: GlobalSearchProps) => {
       onClose={onClose}
       maxWidth="sm"
       fullWidth
-      PaperProps={{
-        sx: {
-          position: 'fixed',
-          top: '10%',
-          m: 0,
-          borderRadius: 2,
+      slotProps={{
+        paper: {
+          sx: {
+            position: 'fixed',
+            top: '10%',
+            m: 0,
+            borderRadius: 2,
+          },
         },
       }}
     >
@@ -137,7 +139,7 @@ const GlobalSearch = ({ open, onClose }: GlobalSearchProps) => {
             {results.papers.length > 0 && (
               <>
                 <Box sx={{ px: 2, py: 1, bgcolor: 'action.hover' }}>
-                  <Typography variant="caption" fontWeight="bold" color="text.secondary">
+                  <Typography variant="caption" sx={{ fontWeight: 'bold' }} color="text.secondary">
                     PAPERS ({results.papers.length})
                   </Typography>
                 </Box>
@@ -154,7 +156,7 @@ const GlobalSearch = ({ open, onClose }: GlobalSearchProps) => {
                     </ListItemAvatar>
                     <ListItemText
                       primary={
-                        <Typography variant="body2" fontWeight="medium" noWrap>
+                        <Typography variant="body2" sx={{ fontWeight: 'medium' }} noWrap>
                           {paper.title}
                         </Typography>
                       }
@@ -174,7 +176,7 @@ const GlobalSearch = ({ open, onClose }: GlobalSearchProps) => {
               <>
                 <Divider />
                 <Box sx={{ px: 2, py: 1, bgcolor: 'action.hover' }}>
-                  <Typography variant="caption" fontWeight="bold" color="text.secondary">
+                  <Typography variant="caption" sx={{ fontWeight: 'bold' }} color="text.secondary">
                     SUBJECTS ({results.subjects.length})
                   </Typography>
                 </Box>
@@ -192,7 +194,7 @@ const GlobalSearch = ({ open, onClose }: GlobalSearchProps) => {
                     <ListItemText
                       primary={
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                          <Typography variant="body2" fontWeight="medium">
+                          <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
                             {subject.code}
                           </Typography>
                           <Typography variant="body2" color="text.secondary">
@@ -215,7 +217,7 @@ const GlobalSearch = ({ open, onClose }: GlobalSearchProps) => {
               <>
                 <Divider />
                 <Box sx={{ px: 2, py: 1, bgcolor: 'action.hover' }}>
-                  <Typography variant="caption" fontWeight="bold" color="text.secondary">
+                  <Typography variant="caption" sx={{ fontWeight: 'bold' }} color="text.secondary">
                     DEPARTMENTS ({results.departments.length})
                   </Typography>
                 </Box>
@@ -232,7 +234,7 @@ const GlobalSearch = ({ open, onClose }: GlobalSearchProps) => {
                     </ListItemAvatar>
                     <ListItemText
                       primary={
-                        <Typography variant="body2" fontWeight="medium">
+                        <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
                           {dept.name}
                         </Typography>
                       }

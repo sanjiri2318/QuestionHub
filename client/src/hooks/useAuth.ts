@@ -3,32 +3,6 @@ import { authService } from '@services/auth.service';
 import { useAuth } from '@contexts/AuthContext';
 import type { User } from '@utils/types';
 
-interface AuthApiResponse {
-  success: boolean;
-  message: string;
-  data: {
-    accessToken: string;
-    refreshToken: string;
-    user: User;
-  };
-}
-
-interface RegisterApiResponse {
-  success: boolean;
-  message: string;
-  data: User;
-}
-
-interface ProfileApiResponse {
-  success: boolean;
-  data: User;
-}
-
-interface MessageApiResponse {
-  success: boolean;
-  message: string;
-}
-
 export const useLogin = () => {
   const { login } = useAuth();
 

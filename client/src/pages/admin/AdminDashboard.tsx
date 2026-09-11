@@ -91,7 +91,7 @@ const AdminDashboard = () => {
 
   return (
     <Box>
-      <Typography variant="h4" fontWeight="bold" sx={{ mb: 1 }}>
+      <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 1 }}>
         Admin Dashboard
       </Typography>
       <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
@@ -110,7 +110,7 @@ const AdminDashboard = () => {
         <Grid size={{ xs: 12, md: 4 }}>
           <Card sx={{ height: '100%' }}>
             <CardContent>
-              <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
+              <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
                 Papers by Month
               </Typography>
               {chartLoading ? (
@@ -128,7 +128,7 @@ const AdminDashboard = () => {
         <Grid size={{ xs: 12, md: 4 }}>
           <Card sx={{ height: '100%' }}>
             <CardContent>
-              <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
+              <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
                 Papers by Department
               </Typography>
               {chartLoading ? (
@@ -146,7 +146,7 @@ const AdminDashboard = () => {
         <Grid size={{ xs: 12, md: 4 }}>
           <Card sx={{ height: '100%' }}>
             <CardContent>
-              <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
+              <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
                 Quick Stats
               </Typography>
               <Stack spacing={2}>
@@ -154,7 +154,7 @@ const AdminDashboard = () => {
                   <Typography variant="body2" color="text.secondary">
                     Approval Rate
                   </Typography>
-                  <Typography variant="body2" fontWeight="bold">
+                  <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
                     {stats && stats.totalStudents > 0
                       ? `${Math.round(((stats.approvedStudents || 0) / stats.totalStudents) * 100)}%`
                       : 'N/A'}
@@ -164,7 +164,7 @@ const AdminDashboard = () => {
                   <Typography variant="body2" color="text.secondary">
                     Papers/Student
                   </Typography>
-                  <Typography variant="body2" fontWeight="bold">
+                  <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
                     {stats && stats.totalStudents > 0
                       ? (stats.totalPapers / stats.totalStudents).toFixed(1)
                       : '0'}
@@ -174,7 +174,7 @@ const AdminDashboard = () => {
                   <Typography variant="body2" color="text.secondary">
                     Downloads/Paper
                   </Typography>
-                  <Typography variant="body2" fontWeight="bold">
+                  <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
                     {stats && stats.totalPapers > 0
                       ? (stats.totalDownloads / stats.totalPapers).toFixed(1)
                       : '0'}
@@ -184,7 +184,7 @@ const AdminDashboard = () => {
                   <Typography variant="body2" color="text.secondary">
                     Subjects/Dept
                   </Typography>
-                  <Typography variant="body2" fontWeight="bold">
+                  <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
                     {stats && stats.totalDepartments > 0
                       ? (stats.totalSubjects / stats.totalDepartments).toFixed(1)
                       : '0'}
@@ -201,7 +201,7 @@ const AdminDashboard = () => {
           <Card>
             <CardContent>
               <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-                <Typography variant="h6" fontWeight="bold">
+                <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
                   Pending Approvals
                 </Typography>
                 {pendingStudents && pendingStudents.length > 0 && (
@@ -240,7 +240,7 @@ const AdminDashboard = () => {
           <Card>
             <CardContent>
               <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-                <Typography variant="h6" fontWeight="bold">
+                <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
                   Recent Uploads
                 </Typography>
                 <TrendingUp color="primary" />
@@ -278,7 +278,7 @@ const AdminDashboard = () => {
 
       <Card sx={{ mt: 3 }}>
         <CardContent>
-          <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
+          <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
             Activity Log
           </Typography>
           {logsLoading ? (

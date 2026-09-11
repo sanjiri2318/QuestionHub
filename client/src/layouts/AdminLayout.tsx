@@ -107,7 +107,7 @@ const AdminLayout = () => {
       <Box sx={{ p: 2, display: 'flex', alignItems: 'center', gap: 1 }}>
         <Description color="primary" sx={{ fontSize: 32 }} />
         <Box>
-          <Typography variant="h6" fontWeight="bold" color="primary">
+          <Typography variant="h6" sx={{ fontWeight: 'bold' }} color="primary">
             QuestionHub
           </Typography>
           <Typography variant="caption" color="text.secondary">

@@ -14,10 +14,10 @@ const NotFoundPage = () => {
         p: 3,
       }}
     >
-      <Typography variant="h1" fontWeight="bold" color="primary" sx={{ mb: 1 }}>
+      <Typography variant="h1" sx={{ fontWeight: 'bold', mb: 1 }} color="primary">
         404
       </Typography>
-      <Typography variant="h5" fontWeight="bold" sx={{ mb: 2 }}>
+      <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 2 }}>
         Page Not Found
       </Typography>
       <Typography variant="body1" color="text.secondary" sx={{ mb: 3, textAlign: 'center' }}>

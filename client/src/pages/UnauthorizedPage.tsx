@@ -15,7 +15,7 @@ const UnauthorizedPage = () => {
       }}
     >
       <Security sx={{ fontSize: 80, color: 'error.main', mb: 2 }} />
-      <Typography variant="h5" fontWeight="bold" sx={{ mb: 2 }}>
+      <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 2 }}>
         Access Denied
       </Typography>
       <Typography variant="body1" color="text.secondary" sx={{ mb: 3, textAlign: 'center' }}>

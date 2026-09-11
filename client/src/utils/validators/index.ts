@@ -100,7 +100,7 @@ export const uploadPaperSchema = z.object({
   semester: z.number().min(1, 'Semester is required').max(8, 'Invalid semester'),
   examYear: z.number().min(2000, 'Invalid year').max(new Date().getFullYear() + 1, 'Invalid year'),
   examMonth: z.enum(['JANUARY', 'MAY', 'AUGUST', 'NOVEMBER'], {
-    required_error: 'Exam month is required',
+    message: 'Exam month is required',
   }),
   file: z
     .any()

@@ -317,7 +317,7 @@ const RegisterPage = () => {
         const selectedDept = departments?.find((d) => d.id === values.departmentId);
         return (
           <Box>
-            <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
+            <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
               Review Your Information
             </Typography>
 
@@ -326,7 +326,7 @@ const RegisterPage = () => {
                 <Typography variant="body2" color="text.secondary">
                   Name:
                 </Typography>
-                <Typography variant="body2" fontWeight="medium">
+                <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
                   {values.name}
                 </Typography>
               </Box>
@@ -334,7 +334,7 @@ const RegisterPage = () => {
                 <Typography variant="body2" color="text.secondary">
                   Register Number:
                 </Typography>
-                <Typography variant="body2" fontWeight="medium">
+                <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
                   {values.registerNumber}
                 </Typography>
               </Box>
@@ -342,7 +342,7 @@ const RegisterPage = () => {
                 <Typography variant="body2" color="text.secondary">
                   Department:
                 </Typography>
-                <Typography variant="body2" fontWeight="medium">
+                <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
                   {selectedDept?.name || 'Not selected'}
                 </Typography>
               </Box>
@@ -350,7 +350,7 @@ const RegisterPage = () => {
                 <Typography variant="body2" color="text.secondary">
                   Email:
                 </Typography>
-                <Typography variant="body2" fontWeight="medium">
+                <Typography variant="body2" sx={{ fontWeight: 'medium' }}>
                   {values.email}
                 </Typography>
               </Box>
@@ -440,7 +440,7 @@ const RegisterPage = () => {
             >
               <School sx={{ fontSize: 36, color: 'white' }} />
             </Box>
-            <Typography variant="h4" fontWeight="bold" color="primary">
+            <Typography variant="h4" sx={{ fontWeight: 'bold' }} color="primary">
               QuestionHub
             </Typography>
             <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
@@ -449,7 +449,7 @@ const RegisterPage = () => {
           </Box>
 
           {/* Title */}
-          <Typography variant="h5" fontWeight="bold" sx={{ mb: 1 }}>
+          <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 1 }}>
             Student Registration
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
@@ -521,8 +521,7 @@ const RegisterPage = () => {
               <Link
                 component={RouterLink}
                 to="/login"
-                fontWeight="bold"
-                sx={{ textDecoration: 'none' }}
+                sx={{ textDecoration: 'none', fontWeight: 'bold' }}
               >
                 Sign in
               </Link>

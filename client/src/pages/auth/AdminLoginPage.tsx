@@ -198,8 +198,8 @@ const AdminLoginPage = () => {
                 </Box>
                 <Typography
                   variant="h4"
-                  fontWeight="bold"
                   sx={{
+                    fontWeight: 'bold',
                     background: 'linear-gradient(135deg, #c7d2fe 0%, #a5b4fc 50%, #818cf8 100%)',
                     backgroundClip: 'text',
                     WebkitBackgroundClip: 'text',
@@ -233,7 +233,7 @@ const AdminLoginPage = () => {
               </Paper>
 
               {/* Sign In Title */}
-              <Typography variant="h5" fontWeight="bold" sx={{ mb: 0.5, color: 'white' }}>
+              <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 0.5, color: 'white' }}>
                 Sign in
               </Typography>
               <Typography variant="body2" sx={{ mb: 3, color: 'rgba(255,255,255,0.5)' }}>
